@@ -1,0 +1,167 @@
+.rooms-page {
+  padding: 2rem 1rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .rooms-page {
+    padding: 1rem 0.5rem;
+  }
+}
+
+.rooms-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+  text-shadow: 3px 3px 0 #000;
+  position: relative;
+  z-index: 10;
+}
+
+.building-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 500px;
+  margin: 0 auto 2rem;
+  position: relative;
+  z-index: 5;
+  align-items: center;
+}
+
+/* Mobile-first approach - single column by default */
+@media (max-width: 768px) {
+  .building-buttons {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+    max-width: 90% !important;
+    width: 90% !important;
+    margin: 0 auto 2rem !important;
+  }
+  
+  .building-btn {
+    width: 100% !important;
+    height: 60px !important;
+    font-size: 1rem !important;
+    padding: 1rem !important;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 480px) {
+  .building-buttons {
+    max-width: 95% !important;
+    width: 95% !important;
+    gap: 0.75rem !important;
+  }
+  
+  .building-btn {
+    height: 55px !important;
+    font-size: 0.9rem !important;
+    padding: 0.75rem !important;
+  }
+}
+
+/* Desktop grid layout */
+@media (min-width: 769px) {
+  .building-buttons {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+.building-btn {
+  font-size: 1rem;
+  padding: 1rem;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transform-origin: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.building-btn:hover {
+  transform: scale(1.05) translateY(-3px);
+}
+
+.building-icon {
+  font-size: 1.5rem;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  color: var(--primary-color);
+  font-weight: 500;
+  transition: transform var(--transition-speed) ease;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  border: 2px solid #000;
+  box-shadow: 2px 2px 0 #000;
+  position: relative;
+  z-index: 5;
+}
+
+.back-link:hover {
+  transform: translateX(-3px);
+  box-shadow: 4px 4px 0 #000;
+}
+
+/* Mario cloud styles */
+.mario-cloud {
+  position: absolute;
+  background-color: white;
+  border: 4px solid #000;
+  border-radius: 30px;
+  z-index: 1;
+  width: 120px;
+  height: 60px;
+}
+
+.mario-cloud::before,
+.mario-cloud::after {
+  content: '';
+  position: absolute;
+  background-color: white;
+  border: 4px solid #000;
+  border-radius: 50%;
+}
+
+.mario-cloud::before {
+  width: 40px;
+  height: 40px;
+  top: -20px;
+  left: 20px;
+}
+
+.mario-cloud::after {
+  width: 50px;
+  height: 50px;
+  top: -25px;
+  left: 60px;
+}
+
+.cloud-1 {
+  top: 15%;
+  right: 10%;
+  animation: float 8s infinite ease-in-out;
+}
+
+.cloud-2 {
+  bottom: 20%;
+  left: 5%;
+  transform: scale(0.7);
+  animation: float 6s infinite ease-in-out reverse;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-15px) scale(1.03); }
+}

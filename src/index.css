@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+  --primary-color: #e52521;  /* Mario Red */
+  --primary-hover: #ff4040;  /* Lighter Red */
+  --secondary-color: #3c8527; /* Luigi Green */
+  --secondary-hover: #4aa832; /* Lighter Green */
+  --accent-color: #ffd700;   /* Coin Gold */
+  --accent-hover: #ffe45c;   /* Lighter Gold */
+  --blue-color: #2096f3;     /* Sky Blue */
+  --blue-hover: #50b2f0;     /* Lighter Blue */
+  --background-color: #5c94fc; /* Mario Sky */
+  --card-bg: #ffffff;
+  --button-bg: #ffc60b;  /* Question block yellow */
+  --text-color: #000000;
+  --text-secondary: #444444;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 0 #000000;
+  --box-shadow-hover: 0 6px 0 #000000;
+  --transition-speed: 0.2s;
+  --font-main: 'Press Start 2P', cursive;
+  --font-heading: 'Press Start 2P', cursive;
+  --pipe-green: #3c8527;
+  --brick-brown: #c75e11;
+  --ground-brown: #9b4511;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  background-image: 
+    linear-gradient(90deg, transparent 0%, transparent 97%, rgba(255, 255, 255, 0.3) 97%, rgba(255, 255, 255, 0.3) 100%),
+    linear-gradient(0deg, transparent 0%, transparent 97%, rgba(255, 255, 255, 0.3) 97%, rgba(255, 255, 255, 0.3) 100%);
+  background-size: 20px 20px;
+  image-rendering: pixelated;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  margin-bottom: 0.5em;
+  color: var(--text-color);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-main);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Brick animation for mario theme */
+.brick {
+  position: relative;
+  background-color: var(--brick-brown);
+  border: 4px solid #000;
+  box-shadow: inset -4px -4px 0 0 rgba(0, 0, 0, 0.3);
+}
+
+.brick:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: #000;
+  opacity: 0.2;
+}
+
+/* Coin animation */
+@keyframes coinSpin {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.coin {
+  display: inline-block;
+  color: var(--accent-color);
+  animation: coinSpin 1s infinite ease-in-out;
+}
+
+/* Question block animation */
+@keyframes questionBlock {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+/* Mario specific animations */
+@keyframes jump {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes groundScroll {
+  0% { background-position: 0 0; }
+  100% { background-position: -40px 0; }
+}
+
+/* Responsive Typography */
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+} 
